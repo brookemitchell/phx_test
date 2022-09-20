@@ -1,5 +1,5 @@
 defmodule PhxTest.BlogTest do
-  use PhxTest.DataCase
+  use PhxTest.DataCase, async: true
 
   alias PhxTest.Blog
 
