@@ -1,6 +1,8 @@
 defmodule PhxTestWeb.Router do
   use PhxTestWeb, :router
 
+  alias PhxTestWeb.ArticleController
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -12,6 +14,8 @@ defmodule PhxTestWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+
+    resources "/articles", ArticleController, except: [:new, :edit]
   end
 
   scope "/", PhxTestWeb do
